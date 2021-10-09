@@ -12,6 +12,7 @@ namespace SeriesDIO
         private string Titulo { get; set; }
         private string Descricao { get; set; }
         private int Ano { get; set; }
+        private bool Excluido { get; set; }
 
         public Series(int id, GenEnum genero, string titulo, string descricao, int ano)
         {
@@ -20,6 +21,7 @@ namespace SeriesDIO
             this.Titulo = titulo;
             this.Descricao = descricao;
             this.Ano = ano;
+            this.Excluido = false;
         }
 
         public override string ToString()
@@ -40,6 +42,11 @@ namespace SeriesDIO
         public int retornaID()
         {
             return this.Id;
+        }
+
+        public void Excluir()
+        {
+            this.Excluido = true;
         }
     }
 }
